@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #F26645;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+nav{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h1, nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 20px;
+}
+.center-el{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;  
+}
+.center-el div p{
+    font-size: 40px;
+}
+.reverse{
+    transform: rotate(180deg);
+}
