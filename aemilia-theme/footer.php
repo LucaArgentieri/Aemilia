@@ -11,21 +11,9 @@
 <!-- END WEBSITE BODY -->
 
 <!-- START FOOTER -->
-	<footer>
-			<div class="widget-area">
-				<?php dynamic_sidebar('footer'); ?>
-			</div>
-			<?php
-				wp_nav_menu([
-					'theme_location' => 'footer_menu',
-					'container' => 'nav',
-					'container_id' => '',
-					'container_class' => '',
-					'menu_id' => '',
-					'menu_class' => '',
-				]);
-			?>
-	</footer>	
+
+<footer></footer>
+
 <!-- END FOOTER -->
 
 <!-- WP FOOTER SCRIPTS -->

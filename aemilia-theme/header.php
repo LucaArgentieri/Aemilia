@@ -36,22 +36,6 @@
 <body <?php body_class(); ?>>
 
 
-<header>
-
-	<div class="header__container">
-	<?php
-			wp_nav_menu([
-				'theme_location' => 'main_menu',
-				'container' => 'nav',
-				'container_id' => '',
-				'container_class' => '',
-				'menu_id' => '',
-				'menu_class' => '',
-			]);
-	?>
-			
-	</div>
-	</header>
 
 <!-- END MENU -->
 
