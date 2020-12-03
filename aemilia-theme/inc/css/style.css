@@ -14,12 +14,17 @@ body {
     justify-content: center;
     align-items: center;
 }
+button, input, textarea {
+    outline: none;
+    border: none;
+}
 nav {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: 1;
 }
 nav a {
     position: absolute;
@@ -28,7 +33,6 @@ nav a {
     font-size: 25px;
     font-weight: bold;
     cursor: pointer;
-
 }
 nav a:hover {
     text-decoration: underline;
@@ -55,4 +59,91 @@ nav :nth-child(4) {
 }
 .active {
     text-decoration: underline;
+}
+/* Contacts */
+.contacts-main h1{
+    color: white;
+    font-size: 30px;
+}
+.contacts-main {
+    z-index: 999;
+}
+.wpcf7 {
+    color: white;
+}
+.form-container {
+    display: flex;
+    margin-bottom: 25px;
+}
+.form-container p {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.form-container input {
+    height: 30px;
+}
+textarea.wpcf7-textarea {
+    width: 756.800px;
+    resize: none;
+}
+.wpcf7-submit {
+    width: 100%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    height: 30px;   
+}
+.wpcf7-not-valid-tip {
+    color: black;
+}
+.wpcf7-response-output {
+    color: black;
+}
+.contacts-main h2{
+    color: white;
+}
+@media(max-width:900px){
+    .contacts-main input {
+        width: 300px;
+        margin-bottom: 10px;
+    }
+    .wpcf7-submit {
+        width: 300px;
+    }
+    .contacts-main img {
+        height: 20px;
+    }
+    textarea.wpcf7-textarea {
+        width: auto;
+    }
+    .form-container {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 0px;
+    }
+    .form-container-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .form-container-bottom p {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-container p {
+        margin: 0px;
+    }
+    .contacts-responsive {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+    .contacts-responsive h2 {
+        font-size: 14px;
+    }
 }
