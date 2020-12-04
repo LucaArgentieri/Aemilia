@@ -162,3 +162,30 @@ textarea.wpcf7-textarea {
   html.is-animating .transition-fade {
     opacity: 0;
   }
+
+/* the project page */
+.page_project_container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 250px 0 250px;
+    color: white;
+    width: 100%;
+}
+
+.page_project_container>img.img{
+    max-width: 400px;
+}
+.page_project_container>img.rotate{
+    transform: scaleY(-1) scaleX(-1);
+    align-self: flex-end;
+}
+
+.project_title{
+    font-size: 30px;
+}
+.page_project_container>p{
+    padding: 5px 0 5px 0;
+    font-size: 25px;
+    text-align: justify;
+}
+/* end the project page css */
