@@ -1,290 +1,58 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 100%;
-}
-@font-face {
-  font-family: "Neue";
-  src: url("Fonts/NeueHaasGroteskDisplay-Reg.otf");
-  font-weight: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
 }
 body {
-  position: relative;
-  background-color: #f26645;
-  object-fit: cover;
-  height: 100vh;
-  font-family: "Neue";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-button,
-input,
-textarea {
-  outline: none;
-  border: none;
+    position: relative;
+    background-color: #F26645;
+    object-fit: cover;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 nav a {
-  position: absolute;
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
-  font-weight: bold;
-  cursor: pointer;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+
 }
 nav a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 nav :nth-child(1) {
-  top: 20px;
-  left: 20px;
+    top: 20px;
+    left: 20px;
 }
 nav :nth-child(2) {
-  transform: rotate(-90deg);
-  transform-origin: right;
-  top: 10px;
-  right: 30px;
+    transform: rotate(-90deg);
+    transform-origin: right;
+    top: 10px;
+    right: 30px;
 }
 nav :nth-child(3) {
-  transform: rotate(-90deg);
-  transform-origin: left;
-  bottom: 10px;
-  left: 30px;
+    transform: rotate(-90deg);
+    transform-origin: left;
+    bottom: 10px;
+    left: 30px;
 }
 nav :nth-child(4) {
-  bottom: 20px;
-  right: 20px;
+    bottom: 20px;
+    right: 20px;
 }
 .active {
-  text-decoration: underline;
+    text-decoration: underline;
 }
-/* FrontPage */
-.front-page-bg {
-  height: 100vh;
-  width: 100vw;
-}
-/* Contacts */
-.contacts-main h1 {
-  color: white;
-  font-size: 30px;
-}
-.contacts-main {
-  z-index: 999;
-}
-.wpcf7 {
-  color: white;
-}
-.form-container {
-  display: flex;
-  margin-bottom: 25px;
-}
-.form-container p {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-.form-container input {
-  height: 30px;
-}
-textarea.wpcf7-textarea {
-  width: 756.8px;
-  resize: none;
-}
-.wpcf7-submit {
-  width: 100%;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  height: 30px;
-}
-.wpcf7-not-valid-tip {
-  color: black;
-}
-.wpcf7-response-output {
-  color: black;
-}
-.contacts-main h2 {
-  color: white;
-}
-@media (max-width: 900px) {
-  .contacts-main input {
-    width: 300px;
-    margin-bottom: 10px;
-  }
-  .wpcf7-submit {
-    width: 300px;
-  }
-  .contacts-main img {
-    height: 20px;
-  }
-  textarea.wpcf7-textarea {
-    width: auto;
-  }
-  .form-container {
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 0px;
-  }
-  .form-container-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .form-container-bottom p {
-    display: flex;
-    flex-direction: column;
-  }
-  .form-container p {
-    margin: 0px;
-  }
-  .contacts-responsive {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-right: 60px;
-    margin-left: 60px;
-  }
-  .contacts-responsive h2 {
-    font-size: 14px;
-  }
-}
-
-/* Swup */
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-
-/* roadmap */
-.c-map {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.map {
-  height: 4px;
-  width: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  z-index: 999;
-}
-
-.line-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-  cursor: pointer;
-  transform: translateY(-50%);
-}
-.line-container:hover .t {
-  background-color: grey;
-}
-.line-container:hover .t-reverse {
-  background-color: grey;
-}
-.line {
-  width: 100%;
-  padding: 2px;
-  background-color: white;
-  transition: all 200ms ease-out;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-}
-.line-reverse {
-  width: 100%;
-  padding: 2px;
-  background-color: white;
-  transition: all 200ms ease-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.t {
-  position: absolute;
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
-  width: 40px;
-  height: 50px;
-  background-color: #f26645;
-  transform: rotate(90deg);
-  transition: all 200ms ease-out;
-  z-index: 1;
-}
-.t-reverse {
-  position: absolute;
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
-  width: 40px;
-  height: 50px;
-  background-color: #f26645;
-  transform: rotate(-90deg);
-  transition: all 200ms ease-out;
-}
-
-/* the project page */
-.page_project_container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 250px 0 250px;
-  color: white;
-  width: 100%;
-}
-
-.page_project_container > img.img {
-  max-width: 400px;
-}
-.page_project_container > img.rotate {
-  transform: scaleY(-1) scaleX(-1);
-  align-self: flex-end;
-}
-
-.project_title {
-  font-size: 30px;
-}
-.page_project_container > p {
-  padding: 5px 0 5px 0;
-  font-size: 25px;
-  text-align: justify;
-}
-
-@media screen and (max-width: 1120px) {
-  .page_project_container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 50px 0 50px;
-    color: white;
-    width: 100%;
-  }
-
-  .project_title {
-    font-size: 25px;
-  }
-  .page_project_container > p {
-    font-size: 20px;
-  }
-  .page_project_container > img.img {
-    max-width: 200px;
-  }
-}
-/* end the project page css */
