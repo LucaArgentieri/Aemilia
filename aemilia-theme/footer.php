@@ -17,7 +17,9 @@
 <!-- END FOOTER -->
 
 <!-- WP FOOTER SCRIPTS -->
-
+<script type="text/javascript">
+    const swup = new Swup();
+</script>
 <?php
 /**
  * the wp_footer() function lets WordPress execute all the post-body operations including the injection of important scripts that don't need to be called in the head of the website.
