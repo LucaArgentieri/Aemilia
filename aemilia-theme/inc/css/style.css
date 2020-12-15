@@ -188,4 +188,25 @@ textarea.wpcf7-textarea {
     font-size: 25px;
     text-align: justify;
 }
+
+
+@media screen and (max-width: 1120px){
+    .page_project_container{
+        display: flex;
+        flex-direction: column;
+        margin: 0 50px 0 50px;
+        color: white;
+        width: 100%;
+    }
+    
+    .project_title{
+        font-size: 20px;
+    }
+    .page_project_container>p{
+        font-size: 15px;
+    } 
+    .page_project_container>img.img{
+        max-width: 200px;
+    }
+}
 /* end the project page css */
