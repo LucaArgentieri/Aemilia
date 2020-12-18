@@ -316,3 +316,16 @@ html.is-animating .transition-fade {
   }
 }
 /* end the project page css */
+
+.single_page{
+  display: flex;
+  flex-direction: column;
+  margin: 900px 250px 0px 250px;
+  width: 100%;
+}
+.footer-gallery{
+  text-align: center;
+}
+.footer-gallery>img{
+  transform: scale(0.5);
+}
