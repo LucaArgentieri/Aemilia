@@ -329,3 +329,10 @@ html.is-animating .transition-fade {
 .footer-gallery>img{
   transform: scale(0.5);
 }
+
+.lg-caption p {
+	position: absolute;
+	top: 0;
+	color: white;
+	padding: 16px;
+}
