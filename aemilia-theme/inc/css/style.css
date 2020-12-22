@@ -317,6 +317,8 @@ html.is-animating .transition-fade {
 }
 /* end the project page css */
 
+
+/* single.php, single gallery */
 .single_page{
   display: flex;
   flex-direction: column;
@@ -335,4 +337,12 @@ html.is-animating .transition-fade {
 	top: 0;
 	color: white;
 	padding: 16px;
+}
+
+.laygridder-header{
+  display: flex;
+  flex-direction: row;
+}
+.laygridder-header>img{
+  max-width: 150px;
 }
