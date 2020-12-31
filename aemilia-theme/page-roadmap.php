@@ -73,9 +73,7 @@
 
 </div>
 
-<script src="/wp-content/themes/aemilia-theme/inc/script/main.js"></script>
-<script>
-</script>
+<script src="/wp-content/themes/aemilia-theme/inc/script/roadmap.js"></script>
 <?php get_footer();?>
 </body>
 </html>
