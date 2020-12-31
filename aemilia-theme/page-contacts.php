@@ -6,7 +6,7 @@
 ;?>
 
 <?php get_header();?>
-<div id="swup" class="contacts-main transition-fade">
+<div class="contacts-main">
 
     <div class="contacts-responsive">
     <h1>Contacts</h1>

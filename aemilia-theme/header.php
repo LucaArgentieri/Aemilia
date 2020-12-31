@@ -14,7 +14,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<!-- WP HEAD SCRIPTS -->
 
 	<?php
@@ -25,6 +24,8 @@
 
 </head>
 <body>
+
+
 <nav>
 <a href="<?php echo get_home_url(); ?>" >AemiliaSS9</a>
 <?php 

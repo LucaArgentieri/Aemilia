@@ -4,7 +4,7 @@
  */
 ;?>
 <?php get_header();?>
-<div id="swup" class="page_project_container transition-fade">
+<div class="page_project_container">
     <h1 class="project_title"><?php the_title(); ?></h1>
     <img  class="img" src=<?php echo wp_get_attachment_url(29);?> alt="">
     <p class="project_content"><?php the_content(); ?></p>

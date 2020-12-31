@@ -17,15 +17,8 @@
 <!-- END FOOTER -->
 
 <!-- WP FOOTER SCRIPTS -->
-<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
 
-<script>
-    const swup = new Swup();
-</script>
 
-<script>
-
-</script>
 
 <?php
 /**

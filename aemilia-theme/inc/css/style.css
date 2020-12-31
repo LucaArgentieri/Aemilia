@@ -316,33 +316,3 @@ html.is-animating .transition-fade {
   }
 }
 /* end the project page css */
-
-
-/* single.php, single gallery */
-.single_page{
-  display: flex;
-  flex-direction: column;
-  margin: 900px 250px 0px 250px;
-  width: 100%;
-}
-.footer-gallery{
-  text-align: center;
-}
-.footer-gallery>img{
-  transform: scale(0.5);
-}
-
-.lg-caption p {
-	position: absolute;
-	top: 0;
-	color: white;
-	padding: 16px;
-}
-
-.laygridder-header{
-  display: flex;
-  flex-direction: row;
-}
-.laygridder-header>img{
-  max-width: 150px;
-}

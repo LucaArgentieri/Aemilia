@@ -111,19 +111,4 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 }
-$args = array(
-	'labels' => $labels,
-	'public' => true,
-	'publicly_queryable' => true,
-	'show_ui' => true,
-	'show_in_menu' => true,
-	'query_var' => true,
-	'rewrite' => true,
-	'capability_type' => 'post',
-	'has_archive' => true,
-	'hierarchical' => false,
-	'menu_position' => null,
-	'supports' => array( 'title', 'editor', 'author', 'thumbnail' )
-	);
-	register_post_type('another_custom_post_type', $args);
 
