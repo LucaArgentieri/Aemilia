@@ -225,6 +225,10 @@ html.is-animating .transition-fade {
   cursor: pointer;
   transform: translateY(-50%);
 }
+.line-container-grey .t,
+.line-container-grey .t-reverse {
+  background-color: grey;
+}
 .line-container:hover .t {
   background-color: grey;
 }
