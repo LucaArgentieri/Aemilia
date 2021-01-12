@@ -2,19 +2,12 @@
 
 <div class="single_page">    
   
-   <?php get_template_part('template-parts/single', 'gallery');?>
-   
-   <div class="footer-gallery">
-      <p>A project by Pietro Baroni and Davide Bernardi</p>
-      <img src=<?php echo wp_get_attachment_url(84);?> alt="">
-      <p>Development and Design by Luca Argentieri, Giuseppe Conti, Lavinia Garau</p>
-   </div>
+   <?php get_template_part('template-parts/single/gallery-content');?>
 
 </div>
 <?php get_footer();?>
 
+<script src="<?php echo WTD_INCLUDES ?>script/google_map.js"></script>
+
 </body>
 </html>
-
-
-

@@ -6,10 +6,21 @@
 <?php get_header();?>
 <div class="page_project_container">
     <h1 class="project_title"><?php the_title(); ?></h1>
-    <img  class="img" src=<?php echo wp_get_attachment_url(29);?> alt="">
+    <div class="arrow">
+                    <p class="long"></p>
+                    <p class="short"></p>
+                    <p class="long"></p>
+                    <p class="triangle"></p>
+                </div>
     <p class="project_content"><?php the_content(); ?></p>
-    <img  class="img rotate" src=<?php echo wp_get_attachment_url(29);?> alt="">
+    <div class="arrow reverse">
+                    <p class="long"></p>
+                    <p class="short"></p>
+                    <p class="long"></p>
+                    <p class="triangle"></p>
+                </div>
 </div>
+<script src="<?php echo WTD_INCLUDES ?>script/arrows.js"></script>
 <?php get_footer();?>
 </body>
 </html>

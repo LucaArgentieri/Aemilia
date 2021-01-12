@@ -23,10 +23,15 @@
 	<!-- END WP HEAD SCRIPTS -->
 
 </head>
-<body>
-
-
-<nav>
+<body class="<?php if(is_single()) {
+	echo 'single';
+} else {
+	echo 'pages';
+}?>">
+<?php
+if (!is_single()) {?>
+    <!-- ADD THE MENU FOR THE PAGES -->
+	<nav class="pages_menu">
 <a href="<?php echo get_home_url(); ?>" >AemiliaSS9</a>
 <?php 
         $pages = get_pages();
@@ -44,10 +49,20 @@
             }
         ?>
 </nav>
-
-<?php
-wp_footer();
-?>		
+<!-- ADD THE MENU FOR THE POSTS (GALLERIES) -->
+<?php } else { ?>
+    <?php
+        wp_nav_menu([
+            'theme_location' => 'main_menu',
+            'container' => 'nav',
+            'container_id' => '',
+            'container_class' => 'single_menu',
+            'menu_id' => '',
+            'menu_class' => 'list',
+        ]);
+        ?>
+<?php }
+?>
 <!-- END MENU -->
 
 <!-- START WEBSITE BODY -->

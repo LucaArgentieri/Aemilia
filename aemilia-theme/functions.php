@@ -111,4 +111,14 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 }
+/* REVERSE THE ORDER OF THE POSTS BEGINNING WITH THE OLDEST ONE */
 
+function order_posts_by_date( $query ) { 
+ 
+	  $query->set( 'orderby', 'date' ); 
+ 
+	  $query->set( 'order', 'ASC' ); 
+ 
+ } 
+ 
+ add_action( 'pre_get_posts', 'order_posts_by_date' );

@@ -10,15 +10,21 @@
 ?>
 <!-- END WEBSITE BODY -->
 
-<!-- START FOOTER -->
+<!-- START FOOTER (ONLY GALLERIES) -->
 
-<footer></footer>
+<?php 
+if (is_single()) {
+    ?>
+    <footer class="footer-gallery"> 
+            <p>A project by <a href="https://www.pietrobaroni.com/">Pietro Baroni</a> and <a href="https://www.davidebernardi.it/">Davide Bernardi</a></p>
+            <p><span class="triangle"></span><span class="triangle"></span><span class="triangle"></span></p>
+            <p>Development and Design by Luca Argentieri, Giuseppe Conti, Lavinia Garau</p>
+    </footer>
+<?php } ?>
 
 <!-- END FOOTER -->
 
 <!-- WP FOOTER SCRIPTS -->
-
-
 
 <?php
 /**
@@ -29,8 +35,6 @@
  */
 wp_footer();
 ?>
-
 <!-- END WP FOOTER SCRIPTS -->
-
 </body>
 </html>
