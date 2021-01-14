@@ -177,7 +177,7 @@ html.is-animating .transition-fade {
 
 /* roadmap */
 .tutorialModal {
-  background-color: rgba(0, 0, 0, 0.575);
+  background-color: rgba(0, 0, 0, 0.733);
   color: white;
   display: flex;
   justify-content: center;
@@ -188,7 +188,11 @@ html.is-animating .transition-fade {
   height: 100vh;
   z-index: 999;
 }
+.tutorialModal h1 {
+  font-size: 30px;
+}
 .tutorialModal p {
+  font-size: 25px;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -204,6 +208,14 @@ html.is-animating .transition-fade {
 }
 .infoBtn:hover {
   transform: scale(1.5);
+}
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }
 @keyframes pulse {
   50% {

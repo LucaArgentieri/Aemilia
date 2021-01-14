@@ -10,9 +10,9 @@
     <div class="infoBtn"><img src="<?php echo WTD_INCLUDES ?>css/svg/question.svg" alt=""></div>
 
     <div id="tutorialModal" class="tutorialModal puff">
+        <div class="closeBtn"><img src="<?php echo WTD_INCLUDES ?>css/svg/close.svg" alt=""></div>
         <h1>Tutorial</h1> <br>
         <p>Scorri il mouse lungo la linea per scoprire i luoghi protagonisti del viaggio</p> <br>
-        <p>Clicca ovunque per scoprire la mappa</p>
     </div>
 
     <div class="map">
