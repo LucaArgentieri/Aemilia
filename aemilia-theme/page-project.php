@@ -5,7 +5,7 @@
 ;?>
 <?php get_header();?>
 <div class="page_project_container">
-    <h1 class="project_title"><?php the_title(); ?></h1>
+    <!-- <h1 class="project_title"><?php the_title(); ?></h1> -->
     <div class="arrow">
                     <p class="long"></p>
                     <p class="short"></p>

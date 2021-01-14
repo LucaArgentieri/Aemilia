@@ -32,7 +32,11 @@
 if (!is_single()) {?>
     <!-- ADD THE MENU FOR THE PAGES -->
 	<nav class="pages_menu">
-<a href="<?php echo get_home_url(); ?>" >AemiliaSS9</a>
+<a href="<?php echo get_home_url(); ?>" class="<?php 
+
+    if ( is_home() ){
+     echo 'active';
+    }?>" >AemiliaSS9</a>
 <?php 
         $pages = get_pages();
         foreach( $pages as $page ) {
