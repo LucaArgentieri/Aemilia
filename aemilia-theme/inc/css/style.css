@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 100%;
+  text-decoration: none;
 }
 @font-face {
   font-family: "Neue";
@@ -12,7 +13,8 @@
 body.pages {
   position: relative;
   background-color: #f26645;
-  object-fit: cover;
+  background-size: cover;
+  width: 100%;
   height: 100vh;
   font-family: "Neue";
   display: flex;
@@ -102,13 +104,20 @@ nav a.active {
 textarea.wpcf7-textarea {
   width: 756.8px;
   resize: none;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+input {
+  padding: 10px;
 }
 .wpcf7-submit {
   width: 100%;
   background-color: black;
   color: white;
   cursor: pointer;
-  height: 30px;
+}
+.wpcf7-submit:hover {
+  opacity: 0.8;
 }
 .wpcf7-not-valid-tip {
   color: black;
@@ -119,7 +128,58 @@ textarea.wpcf7-textarea {
 .contacts-main h2 {
   color: white;
 }
+
 @media (max-width: 900px) {
+  .form-container {
+    width: auto;
+  }
+  .contacts-main input {
+    width: 500px;
+    margin-bottom: 25px;
+  }
+  .wpcf7-submit {
+    width: 500px;
+  }
+  .contacts-main img {
+    height: 20px;
+  }
+  textarea.wpcf7-textarea {
+    width: 500px;
+    margin-bottom: 25px;
+  }
+  .form-container {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0px;
+  }
+  .form-container-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .form-container-bottom p {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-container p {
+    margin: 0px;
+  }
+  .contacts-responsive {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .contacts-responsive h1 {
+    margin-bottom: 10px;
+  }
+  .contacts-responsive h2 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
   .form-container {
     width: auto;
   }
@@ -225,11 +285,6 @@ html.is-animating .transition-fade {
     transform: scale(1);
   }
 }
-@media (max-width: 900px) {
-  .infoBtn {
-    display: none;
-  }
-}
 .puff {
   display: none;
 }
@@ -242,72 +297,98 @@ html.is-animating .transition-fade {
   justify-content: center;
   align-items: center;
 }
-
+.show_title {
+  position: absolute;
+  top: 17%;
+  left: 45%;
+  width: 50%;
+  color: white;
+  font-family: 'Neue';
+  text-align: center;
+  font-size: 44px;
+}
+.line_responsive {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: white;
+  top: 0;
+  left: calc(50% - 2px);
+}
 .map {
   height: 4px;
   width: 100vh;
-  display: flex;
+  display: grid;
+  /*grid-template-columns: repeat(XXX, 1fr); ADDED INLINE BY PHP REGARDING THE NUMBER OF THE POSTS */
   background-color: white;
   justify-content: space-evenly;
 }
-
 .line-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100px;
   cursor: pointer;
   transform: translateY(-50%);
-}
-/** AGGIUNERE HOVER **/
-.line-container .t {
-  background-color: grey;
-}
-.line-container .t-reverse {
-  background-color: grey;
-}
-.line {
   width: 100%;
-  padding: 2px;
-  transition: all 200ms ease-out;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
+  opacity: 0;
 }
-.line-reverse {
-  width: 100%;
-  padding: 2px;
-  transition: all 200ms ease-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.line-container:hover {
+  opacity: 1;
 }
-
-.t {
+.line-container .t, .line-container .t-reverse {
+  background-color: grey;
   position: absolute;
   clip-path: polygon(100% 50%, 0 0, 0 100%);
   width: 40px;
   height: 50px;
-  background-color: #f26645;
-  transform: rotate(90deg);
   transition: all 200ms ease-out;
-  z-index: 1;
+}
+.t {
+  transform: rotate(90deg) translateX(calc(-50% - 4px));
 }
 .t-reverse {
-  position: absolute;
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
-  width: 40px;
-  height: 50px;
-  background-color: #f26645;
-  transform: rotate(-90deg) translateX(-4px);
-  transition: all 200ms ease-out;
+  transform: rotate(-90deg) translateX(calc(-50% - 8px));
+}
+.stages {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  transform: rotate(-90deg) translateX(calc(50% + 20px));
+  display: none;
+}
+.stages_even {
+  transform: rotate(-90deg) translateX(calc(-50% - 20px));
+}
+
+@media (max-width: 1024px) {
+  .infoBtn {
+    display: none;
+  }
+  .name_responsive {
+    display: block;
+  }
+  .show_title {
+    display: none;
+  }
+  .t, .t-reverse {
+    display: none;
+  }
+  .line-container {
+    opacity: 1;
+    width: 40px;
+  }
+  .stages {
+    display: block;
+  }
 }
 
 /* the project page */
 .page_project_container {
   display: flex;
   flex-direction: column;
-  margin: 0 250px;
+  margin: 0 20%;
   color: white;
   width: 100%;
 }
@@ -327,7 +408,7 @@ html.is-animating .transition-fade {
   .page_project_container {
     display: flex;
     flex-direction: column;
-    margin: 0 50px 0 50px;
+    margin: 0 10%;
     color: white;
     width: 100%;
   }
@@ -384,21 +465,29 @@ html.is-animating .transition-fade {
   top: calc(50% - 14px);
   left: calc(50% - 13px);
 }
-@media (max-width: 900px) {
-  .arrow {
-    margin-top: 0;
-    margin-bottom: 0;
+@media (max-width: 1024px) {
+  .page_project_container > p {
+    font-size: 24px;
   }
-  .arrow.reverse {
-    display: none;
-  }
+}
+@media (max-width: 768px) {
   .long {
     height: 5px;
-    width: 60px;
+    width: 30%;
   }
   .short {
     height: 5px;
-    width: 40px;
+    width: 15%;
+  }
+}
+@media (max-width: 900px) {
+  .arrow {
+    display: none;
+  }
+}
+@media (max-width: 630px) {
+  .page_project_container > p {
+    font-size: 18px;
   }
 }
 .reverse {
@@ -413,66 +502,11 @@ html.is-animating .transition-fade {
 .show_triangle {
   transform: translateX(20px) translateY(-20px);
 }
-/*.arrow :nth-child(1) {
-  animation: move 1s infinite ease;
-}
-.arrow :nth-child(2) {
-  animation: move 1s infinite ease;
-  animation-delay: .25s;
-}
-.arrow :nth-child(3) {
-  animation: move 1s infinite ease;
-  animation-delay: .5s;
-}
-.arrow :nth-child(4) {
-  animation: move_triangle 1s infinite ease;
-  animation-delay: .75s;
-}
-.reverse :nth-child(1) {
-  animation-delay: 1s;
-}
-.reverse :nth-child(2) {
-  animation-delay: 1.25s;
-}
-.reverse :nth-child(3) {
-  animation-delay: 1.5s;
-}
-.reverse :nth-child(4) {
-  animation-delay: 1.75s;
-}
-@keyframes movej {
-  50% {background-color: #2d2d2d};
-  100% {background-color: white};
-}
-@keyframes move {
-  50% {transform: translateX(20px); background-color: white};
-  100% {transform: translateX(0)};
-}
-@keyframes move_triangle {
-  50% {transform: translateY(-40%) translateX(20px); background-color: white};
-  100% {transform: translateY(-40%) translateX(0)};
-}/*
-@keyframes move_3 {
-  50% {transform: translateX(30px)};
-  100% {transform: translateX(0)};
-}
-/*@keyframes move_reverse {
-  50% {transform: scaleY(-1) scaleX(-1) translateY(50%) translateX(30px)};
-  100% {transform: scaleY(-1) scaleX(-1) translateY(50%) translateX(0)};
-}*/
-/* @media (max-width: 600px) {
-  .long {
-    width: 100px;
-  }
-  .short {
-    width: 50px;
-  }
-} */
-/* END ARROWS */
 
 /* SINGLE MENU */
 body.single {
   background-color: whitesmoke;
+  overflow-x: hidden;
 }
 nav.single_menu {
   display: flex;
@@ -508,10 +542,10 @@ nav.single_menu ul li a:hover {
 }
 .laygridder-header {
   display: grid;
-  grid-template-columns: 2fr 3fr 3fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   padding: 40px;
-  height: 30vh;
+  height: 250px;
   font-family: "Neue";
   font-weight: bold;
   font-size: 42px;
@@ -526,7 +560,7 @@ nav.single_menu ul li a:hover {
   align-items: center;
 }
 .decorative_line span {
-  width: 100%;
+  width: 90%;
   height: 4px;
   background: linear-gradient(to right, #f5f5f5, #f26645);
   transform: rotate(28deg);
@@ -537,10 +571,9 @@ nav.single_menu ul li a:hover {
   grid-row-start: 1;
   grid-row-end: 2;
   display: flex;
-  /* justify-content: flex-start;
+  justify-content: flex-start;
   align-items: center;
-  margin-left: -20px; */
-  margin-left: 25px;
+  font-size: 90px;
 }
 .number {
   grid-column-start: 2;
@@ -548,42 +581,68 @@ nav.single_menu ul li a:hover {
   grid-row-start: 2;
   grid-row-end: 3;
   display: flex;
-  margin-left: 25px;
-  /* justify-content: center; */
+  justify-content: flex-start;
   align-items: center;
+  color: #f26645;
+  font-size: 72px;
+  padding-left: 30%;
 }
-.km {
+.links_wordpress {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  font-size: 95px;
+  width: 100%;
+  font-family: 'Neue';
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0 15%;
+}
+.links_wordpress a {
+  color: black;
+}
+.links_wordpress a:hover {
+  text-decoration: underline;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1317px) {
   .laygridder-header {
     margin-top: 25px;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    height: 200px;
+    padding: 0;
   }
   .decorative_line {
     display: none;
   }
+  .name {
+    margin: 15px 25px;
+    font-size: 60px; 
+  }
   .number {
-    color: #f26645;
+    padding-left: 0;
+    font-size: 48px;
+  }
+}
+@media (max-width: 600px) {
+  .name {
+    font-size: 48px; 
   }
 }
 
-/** SPAZIO PER LAYGRIDDER**/
+/** SPACE FOR LAYGRIDDER**/
 
 .griglia_immagini {
   margin: 40px;
+  margin-top: 20px;
 }
 div p._Coordinates {
   margin-top: 10px;
@@ -603,6 +662,10 @@ div p._Coordinates {
 
 /** FOOTER SINGLE **/
 
+footer {
+  margin-bottom: 40px;
+}
+
 .footer-gallery p {
   text-align: center;
   font-family: "Neue";
@@ -616,6 +679,20 @@ span.triangle {
   margin: 0px 20px;
   transform: scale(-1);
 }
+span.right {
+  transform: scale(1);
+}
+.left:hover span, .right:hover span {
+  opacity: 0.8;
+}
+.left:hover span {
+  transform: scale(-1) translateX(30%);
+  transition: .5s;
+}
+.right:hover span {
+  transform: scale(1) translateX(30%);
+  transition: .5s;
+}
 .footer-gallery p span.triangle:before {
   background-color: whitesmoke;
 }
@@ -628,4 +705,11 @@ span.triangle {
 }
 .footer-gallery p a:hover {
   text-decoration: underline;
+}
+/* FIX LAYGRIDDER + LIGHTBOX */
+a img {
+  width: 100%;
+}
+.lb-number {
+  font-family: 'Neue';
 }

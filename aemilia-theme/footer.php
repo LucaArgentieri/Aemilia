@@ -18,7 +18,7 @@ if (is_single()) {
     <footer class="footer-gallery"> 
             <p>A project by <a href="https://www.pietrobaroni.com/">Pietro Baroni</a> and <a href="https://www.davidebernardi.it/">Davide Bernardi</a></p>
             <p><span class="triangle"></span><span class="triangle"></span><span class="triangle"></span></p>
-            <p>Development and Design by Luca Argentieri, Giuseppe Conti, Lavinia Garau</p>
+            <p>Development and Design by  <a href="https://github.com/LucaArgentieri">Luca Argentieri</a>,  <a href="https://github.com/peppeconti/">Giuseppe Conti</a>,  <a href="https://github.com/honey-2020">Lavinia Garau</a></p>
     </footer>
 <?php } ?>
 

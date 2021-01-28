@@ -1,0 +1,70 @@
+<?php
+/*
+ * Template Name: Roadmap
+ */
+
+;?>
+<?php get_header();?>
+<div class="c-map">
+
+    <div class="infoBtn"><img src="<?php echo WTD_INCLUDES ?>css/svg/question.svg" alt=""></div>
+
+    <div id="tutorialModal" class="tutorialModal puff">
+        <div class="closeBtn"><img src="<?php echo WTD_INCLUDES ?>css/svg/close.svg" alt=""></div>
+        <h1>Tutorial</h1> <br>
+        <p>Scorri il mouse lungo la linea per scoprire i luoghi protagonisti del viaggio</p> <br>
+    </div>
+
+    <div class="show_title"></div>
+
+    <div class="map">
+        <div class="line_responsive"></div>
+
+            <?php 
+        $args = array(
+            'post_type'         => 'post',
+        );
+        $the_query = new WP_Query( $args );
+        
+        // The Loop
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+                $index_check = $the_query->current_post;
+                if ($index_check%2 === 0) {
+                    ?>
+                    <div class="triangolo_tappa">
+                        <a data-name="<?php echo get_field('name', get_the_ID())?>" href="<?php the_permalink()?>">
+                            <div data-name="<?php echo get_field('name', get_the_ID())?>" class="name_responsive"><p><?php echo get_field('name', get_the_ID())?></p></div>
+                            <div data-name="<?php echo get_field('name', get_the_ID())?>" class="line-container">
+                                    <div data-name="<?php echo get_field('name', get_the_ID())?>" class="line">
+                                        <span data-name="<?php echo get_field('name', get_the_ID())?>" class="t"></span>
+                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                 <?php
+                } else {
+                    ?>
+                    <a data-name="<?php echo get_field('name', get_the_ID())?>" class="triangolo_tappa"  href="<?php the_permalink()?>">
+                    <div data-name="<?php echo get_field('name', get_the_ID())?>" class="name_responsive responsive_reverse"><p><?php echo get_field('name', get_the_ID())?></p></div>
+                    <div data-name="<?php echo get_field('name', get_the_ID())?>" class="line-container">
+                            <div data-name="<?php echo get_field('name', get_the_ID())?>" class="line-reverse">
+                                <span data-name="<?php echo get_field('name', get_the_ID())?>" class="t-reverse"></span>
+                            </div>
+                    </div>
+                </a>
+                <?php } 
+            }
+        }
+        /* Restore original Post Data */
+        wp_reset_postdata();
+        ?>
+    </div>
+
+</div>
+
+<script src="<?php echo WTD_INCLUDES ?>script/roadmap.js"></script>
+<?php get_footer();?>
+</body>
+</html>

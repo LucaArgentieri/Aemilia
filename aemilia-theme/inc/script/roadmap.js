@@ -11,11 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (wind_width >= wind_height && wind_width > 768) {
             line.style.minWidth = `95vw`;
             line.style.transform = `rotate(${angle_deg - 5}deg)`;
+            line.style.height = `4px`;
+            line.style.backgroundColor = `white`;
         } else if (wind_width < wind_height && wind_width > 768) {
             line.style.minWidth = `95vh`;
             line.style.transform = `rotate(${angle_deg}deg)`;
+            line.style.height = `4px`;
+            line.style.backgroundColor = `white`;
         }
-        if (wind_width <= 768) {
+        if (wind_width <= 1024) {
             line.style.minWidth = `80vh`;
             line.style.transform = `rotate(90deg)`;
         }
@@ -38,4 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
         tutorialModal.classList.add('puff')
     });
 
+    const show_tappa = document.querySelector('.show_title');
+    const tappe = Array.from(document.querySelectorAll('.line-container'));
+
+    tappe.forEach(e => e.addEventListener('mouseover', evt => {
+        console.log(evt.target.dataset.stages);
+        show_tappa.innerHTML = evt.target.dataset.stages;
+    })
+    
+    );
+    
+    tappe.forEach(e => e.addEventListener('mouseleave', evt => {
+        console.log(evt.target.dataset.stages);
+        show_tappa.innerHTML = '';
+    })
+    );
 })

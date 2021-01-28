@@ -9,7 +9,7 @@
 <div class="contacts-main">
 
     <div class="contacts-responsive">
-    <!-- <h1>Contacts</h1> -->
+    <h1>Iscriviti alla newsletter!</h1>
     <div class="arrow">
                     <p class="long"></p>
                     <p class="short"></p>
@@ -27,4 +27,3 @@
 
 </body>
 </html>
-

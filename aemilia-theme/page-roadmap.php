@@ -15,7 +15,23 @@
         <p>Scorri il mouse lungo la linea per scoprire i luoghi protagonisti del viaggio</p> <br>
     </div>
 
-    <div class="map">
+    <div class="show_title"></div>
+
+    <?php  $args = array(
+            'post_type'         => 'post',
+        );
+        $the_query = new WP_Query( $args );
+        
+        // The Loop
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post(); }
+            } 
+            ?>
+
+    <div class="map" style="grid-template-columns:repeat(<?php echo $the_query->post_count?>, 1fr);">
+
+    <?php  wp_reset_postdata(); ?>
 
             <?php 
         $args = array(
@@ -30,19 +46,21 @@
                 $index_check = $the_query->current_post;
                 if ($index_check%2 === 0) {
                     ?>
-                    <a data-name="<?php echo get_field('name', get_the_ID())?>" href="<?php the_permalink()?>"><div class="line-container">
-                            <div class="line">
-                                <span class="t"></span>
-                            </div>
-                    </div></a>
+                    <a href="<?php the_permalink()?>">
+                        <div data-stages="<?php echo get_field('name', get_the_ID())?>" class="line-container">
+                        <div data-stages="<?php echo get_field('name', get_the_ID())?>" class="t"></div>
+                        <p class="stages"><?php echo get_field('name', get_the_ID())?></p>
+                        </div>
+                    </a>    
                  <?php
                 } else {
                     ?>
-                    <a data-name="<?php echo get_field('name', get_the_ID())?>" href="<?php the_permalink()?>"><div class="line-container">
-                            <div class="line-reverse">
-                                <span class="t-reverse"></span>
-                            </div>
-                    </div></a>
+                    <a href="<?php the_permalink()?>">
+                        <div data-stages="<?php echo get_field('name', get_the_ID())?>" class="line-container">
+                        <div data-stages="<?php echo get_field('name', get_the_ID())?>" class="t-reverse"></div>
+                        <p class="stages stages_even"><?php echo get_field('name', get_the_ID())?></p>
+                        </div>
+                    </a>    
                 <?php } 
             }
         }
