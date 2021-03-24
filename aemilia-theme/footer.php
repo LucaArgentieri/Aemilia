@@ -10,18 +10,22 @@
 ?>
 <!-- END WEBSITE BODY -->
 
-<!-- START FOOTER (ONLY GALLERIES) -->
-
-<?php 
-if (is_single()) {
-    ?>
-    <footer class="footer-gallery"> 
-            <p>A project by <a href="https://www.pietrobaroni.com/">Pietro Baroni</a> and <a href="https://www.davidebernardi.it/">Davide Bernardi</a></p>
-            <p><span class="triangle"></span><span class="triangle"></span><span class="triangle"></span></p>
-            <p>Development and Design by  <a href="https://github.com/LucaArgentieri">Luca Argentieri</a>,  <a href="https://github.com/peppeconti/">Giuseppe Conti</a>,  <a href="https://github.com/honey-2020">Lavinia Garau</a></p>
-    </footer>
-<?php } ?>
-
+<!-- START FOOTER -->
+	<footer>
+			<div class="widget-area">
+				<?php dynamic_sidebar('footer'); ?>
+			</div>
+			<?php
+				wp_nav_menu([
+					'theme_location' => 'footer_menu',
+					'container' => 'nav',
+					'container_id' => '',
+					'container_class' => '',
+					'menu_id' => '',
+					'menu_class' => '',
+				]);
+			?>
+	</footer>	
 <!-- END FOOTER -->
 
 <!-- WP FOOTER SCRIPTS -->
@@ -35,6 +39,8 @@ if (is_single()) {
  */
 wp_footer();
 ?>
+
 <!-- END WP FOOTER SCRIPTS -->
+
 </body>
 </html>

@@ -14,59 +14,45 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+
+
+
 	<!-- WP HEAD SCRIPTS -->
 
 	<?php
+	/**
+	 * the wp_head() function lets WordPress execute all the pre-body operations including the injection of important styles and scripts.
+	 * This function call should always be inside your <head> tag
+	 * 
+	 * @see  https://developer.wordpress.org/reference/functions/wp_head/
+	 */
 	wp_head();
 	?>
 
 	<!-- END WP HEAD SCRIPTS -->
 
 </head>
-<body class="<?php if(is_single()) {
-	echo 'single';
-} else {
-	echo 'pages';
-}?>">
-<?php
-if (!is_single()) {?>
-    <!-- ADD THE MENU FOR THE PAGES -->
-	<nav class="pages_menu">
-<a href="<?php echo get_home_url(); ?>" class="<?php 
+<body <?php body_class(); ?>>
 
-    if ( is_home() ){
-     echo 'active';
-    }?>" >AemiliaSS9</a>
-<?php 
-        $pages = get_pages();
-        foreach( $pages as $page ) {
-                ?>
-				<a href="<?php echo get_permalink($page->ID) ?>" class="<?php  echo get_the_title($page) ?> <?php
-				if (get_the_title() === get_the_title($page)) {
-					echo 'active';
-				}
-				?>"> <?php
-                    echo get_the_title($page);
-                ?> 
-                </a>
-                <?php
-            }
-        ?>
-</nav>
-<!-- ADD THE MENU FOR THE POSTS (GALLERIES) -->
-<?php } else { ?>
-    <?php
-        wp_nav_menu([
-            'theme_location' => 'main_menu',
-            'container' => 'nav',
-            'container_id' => '',
-            'container_class' => 'single_menu',
-            'menu_id' => '',
-            'menu_class' => 'list',
-        ]);
-        ?>
-<?php }
-?>
+
+<header>
+
+	<div class="header__container">
+	<?php
+			wp_nav_menu([
+				'theme_location' => 'main_menu',
+				'container' => 'nav',
+				'container_id' => '',
+				'container_class' => '',
+				'menu_id' => '',
+				'menu_class' => '',
+			]);
+	?>
+			
+	</div>
+	</header>
+
 <!-- END MENU -->
 
 <!-- START WEBSITE BODY -->
